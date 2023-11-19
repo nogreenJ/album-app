@@ -176,45 +176,12 @@ function MenuPrincipal() {
                                 textDecoration: 'none',
                             }}
                         >
-                            Meus Posts
+                            Meus Albuns
                         </Typography>
                         {/* Fim tela pequena - Logo Home */}
                         {/* Inicio itens menu tela grande */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             <Box sx={{ flexGrow: 0 }}>
-                                {user &&
-                                    <>
-                                        <Button onClick={handleOpenMenuManutencoes}
-                                            sx={{
-                                                my: 2, color: 'white', display: 'block',
-                                                textTransform: 'unset !important'
-                                            }}
-                                        >
-                                            Manutenções
-                                        </Button>
-                                        <Menu
-                                            sx={{ mt: '45px' }}
-                                            id="menu-manutencoes"
-                                            anchorEl={anchorElMenuManutencoes}
-                                            anchorOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'right',
-                                            }}
-                                            keepMounted
-                                            transformOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'right',
-                                            }}
-                                            open={anchorElMenuManutencoes}
-                                            onClose={handleCloseMenuManutencoes}
-                                        >
-                                            <MenuItem onClick={handleCloseMenuManutencoes}
-                                                component={NavLink} to="posts">
-                                                <Typography textAlign="center">Posts</Typography>
-                                            </MenuItem>
-                                        </Menu>
-                                    </>
-                                }
                             </Box>
                         </Box>
                         {/* Fim itens menu tela grande */}

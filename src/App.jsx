@@ -14,24 +14,24 @@ import Posts from './componentes/telas/posts/Posts';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MenuPrincipal/>,
+    element: <MenuPrincipal />,
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Posts />,
       },
       {
         path: "sobre",
         element: <Sobre />,
-      },  
+      },
       {
         path: "Login",
         element: <Login />,
-      },     
-      {
+      },
+      /*{
         path: "posts",
         element: <Posts />,
-      },       
+      },*/
       {
         path: "*",
         element: <NotFound />,
