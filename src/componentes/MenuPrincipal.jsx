@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AccountCircle } from '@mui/icons-material';
-import { logout, auth, signInWithGoogle } from '../firebaseConfig';
+import { logout, auth, signInWithGit, signInWithGoogle } from '../firebaseConfig';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from 'react-router-dom';
 
@@ -53,7 +53,8 @@ function MenuPrincipal() {
     };
 
     const handleCloseUserMenu = () => {
-        signInWithGoogle();
+        //signInWithGoogle();
+        signInWithGit();
         setAnchorElUser(null);
     };
 

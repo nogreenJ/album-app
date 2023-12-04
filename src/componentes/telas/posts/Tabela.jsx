@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 
 function Tabela() {
 
-    const { alerta, listaObjetos, remover, editarObjeto, novoObjeto }
+    const { user, alerta, listaObjetos, remover, editarObjeto, novoObjeto }
         = useContext(PostsContext);
 
     const columns = useMemo(
@@ -32,23 +32,23 @@ function Tabela() {
             {
                 accessorKey: 'texto',
                 header: 'Texto'
-            },            
+            },
             {
                 accessorKey: 'url',
                 header: 'Url'
-            }, 
+            },
             {
                 accessorKey: 'usuario',
                 header: 'Usuário'
-            },  
+            },
             {
                 accessorKey: 'email',
                 header: 'Email'
-            },                
+            },
             {
                 accessorKey: 'uid',
                 header: 'UID'
-            },                                
+            },
         ],
         [],
     );
@@ -59,10 +59,10 @@ function Tabela() {
                 Posts
             </Typography>
             <Alerta alerta={alerta} />
-            <Button variant="outlined"
+            {user && <Button variant="outlined"
                 onClick={() => novoObjeto()}>
                 <AddIcon /> Novo
-            </Button>
+            </Button>}
             {listaObjetos.length === 0 &&
                 <Typography variant="h4">
                     Nenhum Post encontrado
@@ -81,14 +81,19 @@ function Tabela() {
                         }
                     }}
                     enableRowActions
-                    renderRowActionMenuItems={({ row }) => <div>
-                        <MenuItem key="editar"
-                            onClick={() => editarObjeto(row.original)}
-                            title="Editar"><EditIcon /></MenuItem>
-                        <MenuItem key="remover"
-                            onClick={() => remover(row.original)}
-                            title="Apagar"><DeleteIcon /></MenuItem>
-                    </div>}
+                    renderRowActionMenuItems={({ row }) => {
+                        if (user) {
+                            return <div>
+                                <MenuItem key="editar"
+                                    onClick={() => editarObjeto(row.original)}
+                                    title="Editar"><EditIcon /></MenuItem>
+                                <MenuItem key="remover"
+                                    onClick={() => remover(row.original)}
+                                    title="Apagar"><DeleteIcon /></MenuItem>
+                            </div>
+                        }
+                        return <div></div>
+                    }}
                 />
             )}
         </div>

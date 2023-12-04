@@ -24,7 +24,12 @@ export const getPostsFirebase = async (setListaObjetos) => {
 export const getPostsUIDFirebase = async (uid, setListaObjetos) => {
     try {
         const colRef = collection(db, "posts");
-        const q = query(colRef, where("uid", "==", uid))
+        let q;
+        if (uid) {
+            q = query(colRef, where("uid", "==", uid))
+        } else {
+            q = query(colRef)
+        }
         onSnapshot(q, (querySnapshot) => {
             setListaObjetos(querySnapshot.docs.map(doc => ({
                 id: doc.id,
