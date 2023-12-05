@@ -85,10 +85,8 @@ function Posts() {
 
     useEffect(() => {
         setCarregando(true);
-        if (user?.uid != null) {
-            const uid = user?.uid;
-            getPostsUIDFirebase(uid, setListaObjetos);
-        }
+        const uid = user?.uid;
+        getPostsUIDFirebase(uid, setListaObjetos);
         setCarregando(false);
     }, [user]);
 
