@@ -162,23 +162,6 @@ function MenuPrincipal() {
                         {/* Inicio tela pequena - Logo Home */}
                         <Avatar sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} alt="Logo IFSUL" src={LogoIfsul}
                         />
-                        <Typography
-                            variant="h5"
-                            noWrap
-                            component={NavLink} to="/"
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'flex', md: 'none' },
-                                flexGrow: 1,
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            Meus Albuns
-                        </Typography>
                         {/* Fim tela pequena - Logo Home */}
                         {/* Inicio itens menu tela grande */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
