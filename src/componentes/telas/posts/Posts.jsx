@@ -114,18 +114,19 @@ function Posts() {
                     {listaObjetos.length === 0 && <h2>Nenhum registro encontrado</h2>}
 
                     <Grid container spacing={2}>
-                        <Grid item xs={12} sm={12} md={3} lg={3} xl={3}
-                            key="0">
-                            <Card sx={{
-                                minWidth: 50, minHeight: 226,
-                                "&:hover": { cursor: "pointer", backgroundColor: "lightgrey" },
-                            }} onClick={() => novoObjeto()}>
-                                {user?.uid != null &&
+                        {user?.uid != null &&
+                            <Grid item xs={12} sm={12} md={3} lg={3} xl={3}
+                                key="0">
+                                <Card sx={{
+                                    minWidth: 50, minHeight: 226,
+                                    "&:hover": { cursor: "pointer", backgroundColor: "lightgrey" },
+                                }} onClick={() => novoObjeto()}>
                                     <CardContent sx={{ textAlign: "center", paddingTop: "100px" }}>
                                         <AddIcon sx={{ transform: "scale(2.7)" }} />
-                                    </CardContent>}
-                            </Card>
-                        </Grid>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        }
                         {listaObjetos.length > 0 && (
                             listaObjetos.map(objeto => (
                                 <Grid item xs={12} sm={12} md={3} lg={3} xl={3}
