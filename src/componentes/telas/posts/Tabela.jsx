@@ -59,10 +59,6 @@ function Tabela() {
                 Posts
             </Typography>
             <Alerta alerta={alerta} />
-            {user && <Button variant="outlined"
-                onClick={() => novoObjeto()}>
-                <AddIcon /> Novo
-            </Button>}
             {listaObjetos.length === 0 &&
                 <Typography variant="h4">
                     Nenhum Post encontrado

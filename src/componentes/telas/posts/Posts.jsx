@@ -120,9 +120,10 @@ function Posts() {
                                 minWidth: 50, minHeight: 226,
                                 "&:hover": { cursor: "pointer", backgroundColor: "lightgrey" },
                             }} onClick={() => novoObjeto()}>
-                                <CardContent sx={{ textAlign: "center", paddingTop: "100px" }}>
-                                    <AddIcon sx={{ transform: "scale(2.7)" }} />
-                                </CardContent>
+                                {user?.uid != null &&
+                                    <CardContent sx={{ textAlign: "center", paddingTop: "100px" }}>
+                                        <AddIcon sx={{ transform: "scale(2.7)" }} />
+                                    </CardContent>}
                             </Card>
                         </Grid>
                         {listaObjetos.length > 0 && (
